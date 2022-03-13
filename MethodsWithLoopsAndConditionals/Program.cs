@@ -14,10 +14,11 @@ namespace MethodsWithLoopsAndConditionals
             SkipThreePrint();
             Console.WriteLine(AskIfEqual(1, 5));
             Console.WriteLine(EvenOrOdd(2));
-            VoterAgeCheck(22);
+            Console.WriteLine(VoterAgeCheck(22));
             Console.WriteLine(NegToPosTen(3));
             MultplyTable(4);
-
+            
+           
 
         }
         /*Write a method that will print to the console 
@@ -70,29 +71,27 @@ namespace MethodsWithLoopsAndConditionals
         //Write a method to read the age of a candidate and
         //determine whether they can vote.Hint: use Parse()... 
         //or the safer TryParse() for an extra challenge!!
-        public static void VoterAgeCheck(int age)
+        public static bool VoterAgeCheck(int age)
         {
             age = Convert.ToInt32(Console.ReadLine());
-
-            if (age < 0)
-            {
-                Console.WriteLine("Please enter age");
-            }
-            else if (age > 18)
+            if (age > 18)
             {
                 Console.WriteLine("Go vote!");
+                return true;
             }
             else
             {
                 Console.WriteLine("Sorry, too yung");
+                
             }
+            return false;
         }
         //Write a method to check if an integer(from the user) is in the range -10 to 10.
         public static bool NegToPosTen(int user)
         {
            
              user = Convert.ToInt32(Console.ReadLine());
-             var numCheck = (user <= 10 && user >= -10) ? true : false;
+             var numCheck = (user <= 10 || user >= -10) ? true : false;
 
             return numCheck;
         }
@@ -100,11 +99,13 @@ namespace MethodsWithLoopsAndConditionals
         public static void MultplyTable(int given)
         {
             given = Convert.ToInt32(Console.ReadLine());
-      
-            for (int i = 0; i <= 12; i++)
+            int table = 1;
+            for (int i = 1; i <= 12; i++)
             {
                 
-                Console.WriteLine(i * given);
+                Console.WriteLine("{0}", (table * given));
+                table++;
+                
             }
 
         }
