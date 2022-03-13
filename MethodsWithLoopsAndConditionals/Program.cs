@@ -17,7 +17,7 @@ namespace MethodsWithLoopsAndConditionals
             Console.WriteLine(VoterAgeCheck(22));
             Console.WriteLine(NegToPosTen(3));
             MultplyTable(4);
-            
+          
            
 
         }
@@ -103,7 +103,7 @@ namespace MethodsWithLoopsAndConditionals
             for (int i = 1; i <= 12; i++)
             {
                 
-                Console.WriteLine("{0}", (table * given));
+                Console.WriteLine($"{table} x {given} = {table*given}");
                 table++;
                 
             }
